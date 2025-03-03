@@ -3,7 +3,7 @@ REM setting working directory to location of .bat file
 cd /d "%~dp0"
 echo Directory set as: %cd%
 REM allows printing of current folder as project folder 
-for %%I in (%cd%) do set "ProjectFolder=%%~nxI"
+for /F "tokens=*" %%I in ("%cd%") do set "ProjectFolder=%%~nxI"
 
 REM setting up a confirmation dialogue within command prompt
 echo.
